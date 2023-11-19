@@ -1,16 +1,18 @@
 {
-  "name": "Sitealarm.de",
+  "name": "Zhylon Documentations",
   "version": "0.0.1",
-  "description": "The API documentation for our monitoring services.",
+  "description": "Complete Documentation for all Zhylon Products",
   "main": "index.js",
   "authors": {
     "name": "TobyMaxham",
     "email": "git@maxham.de"
   },
-  "repository": "https://github.com/TobyMaxham/docs.sitealarm.de/Sitealarm.de",
+  "repository": "https://github.com/Zhylon/product-documentation",
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "build": "vuepress build src",
+    "dev:sitealarm": "vuepress dev sitealarm",
+    "build:sitealarm": "vuepress build sitealarm"
   },
   "license": "MIT",
   "devDependencies": {
