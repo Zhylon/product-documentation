@@ -1,5 +1,5 @@
 {
-  "name": "Zhylon Documentations",
+  "name": "zhylon-product-documentations",
   "version": "0.0.1",
   "description": "Complete Documentation for all Zhylon Products",
   "main": "index.js",
@@ -12,7 +12,7 @@
     "dev": "vuepress dev src",
     "build": "vuepress build src",
     "dev:sitealarm": "vuepress dev sitealarm",
-    "build:sitealarm": "vuepress build sitealarm"
+    "build:sitealarm": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build sitealarm --dest '../builds/sitealarm'"
   },
   "license": "MIT",
   "devDependencies": {
