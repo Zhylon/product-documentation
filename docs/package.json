@@ -1,0 +1,19 @@
+{
+  "name": "Sitealarm.de",
+  "version": "0.0.1",
+  "description": "The API documentation for our monitoring services.",
+  "main": "index.js",
+  "authors": {
+    "name": "TobyMaxham",
+    "email": "git@maxham.de"
+  },
+  "repository": "https://github.com/TobyMaxham/docs.sitealarm.de/Sitealarm.de",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
