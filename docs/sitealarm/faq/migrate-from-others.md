@@ -28,15 +28,3 @@ Bitte beachte, dass die Überprüfung der Zertifikate nur für Webseiten aktivie
 Bei Webseiten, die mit `http://` beginnen, wird die Überprüfung der Zertifikate nicht aktiviert.
 
 Außerdem werden Websites die bereits in Sitealarm vorhanden sind, nicht migriert.
-
-
-
-https://pulsetic.com/pricing/
-
-https://sandstorm.de/de/blog/post/migrating-from-uptimerobot-to-uptimekuma.html
-https://ohdear.app/news-and-updates/scheduled-task-monitoring-now-available-to-all-our-users
-uptime robot 15$/M
-Cronitor 49$/M
-Statuspage 29$/M
-Dead Link Checker 9$/M
-
