@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "dev:sitealarm": "vuepress dev sitealarm",
+    "dev:sitealarm": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev sitealarm",
     "build:sitealarm": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build sitealarm --dest '../builds/sitealarm'"
   },
   "license": "MIT",
