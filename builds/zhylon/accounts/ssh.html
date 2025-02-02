@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="🇩🇪">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SSH-Schlüssel | Zhylon Docs 🚀</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="Die API Dokumentation zu unserem Server Management Tool.">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.c1e3163f.css" as="style"><link rel="preload" href="/assets/js/app.f8c8c523.js" as="script"><link rel="preload" href="/assets/js/3.9e89f870.js" as="script"><link rel="preload" href="/assets/js/14.90103ea4.js" as="script"><link rel="prefetch" href="/assets/js/10.673461ea.js"><link rel="prefetch" href="/assets/js/11.d7d3b088.js"><link rel="prefetch" href="/assets/js/12.42b6de91.js"><link rel="prefetch" href="/assets/js/13.dd1edaf7.js"><link rel="prefetch" href="/assets/js/15.04f53c93.js"><link rel="prefetch" href="/assets/js/16.885fbdbd.js"><link rel="prefetch" href="/assets/js/17.b5d6bcc1.js"><link rel="prefetch" href="/assets/js/18.3c6424ed.js"><link rel="prefetch" href="/assets/js/19.52e42a14.js"><link rel="prefetch" href="/assets/js/20.aa9025b7.js"><link rel="prefetch" href="/assets/js/21.cbd4e57a.js"><link rel="prefetch" href="/assets/js/22.fe5dab8c.js"><link rel="prefetch" href="/assets/js/23.4f698bdd.js"><link rel="prefetch" href="/assets/js/24.e9e583c6.js"><link rel="prefetch" href="/assets/js/25.647a6cc8.js"><link rel="prefetch" href="/assets/js/26.2e8f1d59.js"><link rel="prefetch" href="/assets/js/27.51f0f99c.js"><link rel="prefetch" href="/assets/js/28.ac3ae6a0.js"><link rel="prefetch" href="/assets/js/29.4dfb2d73.js"><link rel="prefetch" href="/assets/js/30.e5f29f1c.js"><link rel="prefetch" href="/assets/js/4.4ab2ce0c.js"><link rel="prefetch" href="/assets/js/5.6075ae6b.js"><link rel="prefetch" href="/assets/js/6.882ac640.js"><link rel="prefetch" href="/assets/js/7.46265447.js"><link rel="prefetch" href="/assets/js/8.c64fa278.js"><link rel="prefetch" href="/assets/js/9.5e431f60.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.25c53924.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c1e3163f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Zhylon Docs 🚀</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/general/" class="nav-link">
+  Allgemein
+</a></div><div class="nav-item"><a href="/accounts/" class="nav-link router-link-active">
+  Account
+</a></div><div class="nav-item"><a href="/servers/providers.html" class="nav-link">
+  Server
+</a></div><div class="nav-item"><a href="/sites/" class="nav-link">
+  Seiten
+</a></div><div class="nav-item"><a href="/projects/" class="nav-link">
+  Projekte
+</a></div><div class="nav-item"><a href="/resources/" class="nav-link">
+  Ressourcen
+</a></div><div class="nav-item"><a href="/api/" class="nav-link">
+  API
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/general/" class="nav-link">
+  Allgemein
+</a></div><div class="nav-item"><a href="/accounts/" class="nav-link router-link-active">
+  Account
+</a></div><div class="nav-item"><a href="/servers/providers.html" class="nav-link">
+  Server
+</a></div><div class="nav-item"><a href="/sites/" class="nav-link">
+  Seiten
+</a></div><div class="nav-item"><a href="/projects/" class="nav-link">
+  Projekte
+</a></div><div class="nav-item"><a href="/resources/" class="nav-link">
+  Ressourcen
+</a></div><div class="nav-item"><a href="/api/" class="nav-link">
+  API
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Account</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/accounts/" aria-current="page" class="sidebar-link">Dein Konto</a></li><li><a href="/accounts/teams.html" class="sidebar-link">Teams</a></li><li><a href="/accounts/source-control.html" class="sidebar-link">Source Control</a></li><li><a href="/accounts/ssh.html" aria-current="page" class="active sidebar-link">SSH-Schlüssel</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/accounts/ssh.html#einfuhrung" class="sidebar-link">Einführung</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/accounts/ssh.html#hinzufugen-deines-ssh-schlussels-zu-neuen-servern" class="sidebar-link">Hinzufügen Deines SSH-Schlüssels zu neuen Servern</a></li><li class="sidebar-sub-header"><a href="/accounts/ssh.html#hinzufugen-eines-ssh-schlussels-zu-bestehenden-servern" class="sidebar-link">Hinzufügen eines SSH-Schlüssels zu bestehenden Servern</a></li></ul></li><li class="sidebar-sub-header"><a href="/accounts/ssh.html#server-offentlicher-schlussel" class="sidebar-link">Server-Öffentlicher Schlüssel</a></li><li class="sidebar-sub-header"><a href="/accounts/ssh.html#zhylon-offentlicher-schlussel" class="sidebar-link">Zhylon-Öffentlicher Schlüssel</a></li></ul></li><li><a href="/accounts/api.html" class="sidebar-link">API</a></li><li><a href="/accounts/tags.html" class="sidebar-link">Tags</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ssh-schlussel"><a href="#ssh-schlussel" class="header-anchor">#</a> SSH-Schlüssel</h1> <p>SSH-Schlüssel werden verwendet, um sich über das SSH-Protokoll mit deinem Server zu authentifizieren.
+Hier erfährst du, wie du deine SSH-Schlüssel zu deinem Zhylon-Konto und zu deinen Servern hinzufügst.</p> <h2 id="einfuhrung"><a href="#einfuhrung" class="header-anchor">#</a> Einführung</h2> <p>SSH ist ein Protokoll, das es dir ermöglicht, über ein Befehlszeilen-Terminal auf deinen Server zuzugreifen.
+SSH-Schlüssel dienen der Authentifizierung mit deinem Server über das SSH-Protokoll.
+Wenn du neu bei SSH-Schlüsseln bist, empfehlen wir dir, die
+<a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent" target="_blank" rel="noopener noreferrer">GitHub-Dokumentation zur Generierung von SSH-Schlüsseln<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+zu lesen, um zu beginnen.</p> <p>Nachdem du deinen SSH-Schlüssel zu deinem Server hinzugefügt hast, kannst du dich ohne Passwort per SSH mit dem Server verbinden:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">ssh</span> zhylon@SERVER_PUBLIC_IP_ADDRESS
+</code></pre></div><h3 id="hinzufugen-deines-ssh-schlussels-zu-neuen-servern"><a href="#hinzufugen-deines-ssh-schlussels-zu-neuen-servern" class="header-anchor">#</a> Hinzufügen Deines SSH-Schlüssels zu neuen Servern</h3> <p>Bevor du einen Server zum ersten Mal bereitstellst, solltest du deine SSH-Schlüssel zu deinem Konto hinzufügen.
+Dies kannst du auf der Seite für <a href="https://zhylon.net/user-profile/ssh-keys" target="_blank" rel="noopener noreferrer">SSH-Schlüssel<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> in deinem Zhylon-Dashboard tun.</p> <p>Im Rahmen des Bereitstellungsprozesses wird Zhylon alle aktiven SSH-Schlüssel zu deinem Zhylon-Konto hinzufügen.
+Dadurch kannst du dich als Benutzer <code>zhylon</code> per SSH mit dem Server verbinden.</p> <p>Wenn eine deiner Webseiten die Benutzerisolation verwendet, wirst du aufgefordert, den Benutzer auszuwählen, dem du den Schlüssel hinzufügen möchtest.
+Anschließend kannst du dich als dieser Benutzer per SSH mit dem Server verbinden.</p> <h3 id="hinzufugen-eines-ssh-schlussels-zu-bestehenden-servern"><a href="#hinzufugen-eines-ssh-schlussels-zu-bestehenden-servern" class="header-anchor">#</a> Hinzufügen eines SSH-Schlüssels zu bestehenden Servern</h3> <p>Wenn du bereits Server bereitgestellt hast und einen neuen SSH-Schlüssel zu mehreren Servern gleichzeitig hinzufügen möchtest, füge zuerst deinen Schlüssel über die Seite für
+<a href="https://zhylon.net/user-profile/ssh-keys" target="_blank" rel="noopener noreferrer">SSH-Schlüssel<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+zu deinem Konto hinzu.
+Sobald er in der Liste der &quot;Aktiven Schlüssel&quot; aufgeführt ist, kannst du die Aktion &quot;Zu Servern hinzufügen&quot; verwenden und die Server auswählen, zu denen der Schlüssel hinzugefügt werden soll.</p> <p>Alternativ kannst du SSH-Schlüssel auch <a href="/servers/ssh">direkt einem Server hinzufügen</a>, ohne sie zuvor zu deinem Konto hinzuzufügen.</p> <h2 id="server-offentlicher-schlussel"><a href="#server-offentlicher-schlussel" class="header-anchor">#</a> Server-Öffentlicher Schlüssel</h2> <p>Während des Bereitstellungsprozesses generiert Zhylon ein eigenes Schlüsselpaar, um auf den Server zugreifen zu können.
+Der öffentliche Schlüssel dieses Schlüsselpaares wird in die Datei <code>authorized_keys</code> sowohl des <code>root</code>- als auch des <code>zhylon</code>-Benutzers eingefügt.</p> <h2 id="zhylon-offentlicher-schlussel"><a href="#zhylon-offentlicher-schlussel" class="header-anchor">#</a> Zhylon-Öffentlicher Schlüssel</h2> <p>Während des Bereitstellungsprozesses erstellt Zhylon einen öffentlichen Schlüssel für den <code>zhylon</code>-Benutzer.
+Dieser Schlüssel wird von Git verwendet, um die Projekte auf deinem Server zu klonen.
+Der Schlüssel wird beim Quellcodeanbieter hinzugefügt und befindet sich unter <code>/home/zhylon/.ssh/id_rsa.pub</code>.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/accounts/source-control.html" class="prev">
+        Source Control
+      </a></span> <span class="next"><a href="/accounts/api.html">
+        API
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f8c8c523.js" defer></script><script src="/assets/js/3.9e89f870.js" defer></script><script src="/assets/js/14.90103ea4.js" defer></script>
+  </body>
+</html>
