@@ -24,9 +24,9 @@ Du kannst so viele Tokens erstellen, wie du für deine Integrationen benötigst.
 
 ### API-Token löschen
 
-Wenn du ein API-Token nicht mehr benötigst, kannst du es löschen, indem du auf die X-Schaltfläche neben dem Token-Namen in deinem [API-Token-Dashboard](https://zhylon.net/user-profile/api) klickst.
+Wenn du ein API-Token nicht mehr benötigst, kannst du es löschen, indem du auf die **X**-Schaltfläche neben dem Token-Namen in deinem [API-Token-Dashboard](https://zhylon.net/user-profile/api) klickst.
 
 
 ## Rate Limits
 
-Die Zhylon API hat derzeit ein Rate Limit von 60 Anfragen pro Minute. Wenn du dieses Limit überschreitest, erhältst du eine `429 Too Many Requests-Antwort.
+Die Zhylon API hat derzeit ein Rate Limit von 60 Anfragen pro Minute. Wenn du dieses Limit überschreitest, erhältst du eine `429 Too Many Requests`-Antwort.

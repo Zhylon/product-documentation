@@ -20,14 +20,15 @@ Im Folgenden werden wir jede dieser Serverarten im Detail besprechen.
 
 Hier findest du eine Übersicht darüber, welche Funktionen die verschiedenen Servertypen bieten:
 
-| Type                  | Nginx | PHP | Databases * | IMDb * | Node.js |
-|-----------------------|:-----:|----:|------------:|-------:|--------:|
-| App-Server            |   ✅   |   ✅ |           ✅ |      ✅ |       ✅ |
-| Web-Server            |   ✅   |   ✅ |             |        |       ✅ |
-| Database Server       |       |     |           ✅ |        |        |
-| Cache-Server |       |     |            |        |       ✅ |
-| Worker-Servers        |       |   ✅ |             |        |         |
-| Load-Balancer         |   ✅   |     |             |        |         |
+| Type                  | Nginx | PHP  | Databases *  | IMDb *  | Node.js  | MeiliSearch |
+|-----------------------|:-----:|:----:|:------------:|:-------:|:--------:|:-----------:|
+| App-Server            |   ✅   |  ✅   |      ✅       |    ✅    |    ✅     |             |
+| Web-Server            |   ✅   |  ✅   |              |         |    ✅     |             |
+| Database Server       |       |      |      ✅       |         |          |             |
+| Cache-Server |       |      |              |         |    ✅     |             |
+| Worker-Servers        |       |  ✅   |              |         |          |             |
+| MeiliSearch Server        |       |     |              |         |          |      ✅       |
+| Load-Balancer         |   ✅   |      |              |         |          |             |
 
 * Verfügbare Datenbanken: MySQL, Postgres, MariaDB
 * Verfügbare In-Memory-Databases (IMDb): Redis, Memcached
@@ -98,6 +99,16 @@ Bereitgestellte Software:
 
 - PHP
 - Supervisor  
+
+
+## Meilisearch-Server
+
+Meilisearch-Server installieren [Meilisearch](https://meilisearch.com/), um deiner Anwendung einen blitzschnellen Suchdienst anzubieten.
+Sie sind dafür vorgesehen, mit einem anderen Server verbunden zu sein und über ein **[privates Netzwerk](/resources/network.html#servernetzwerk)** zu kommunizieren.
+
+Ein Meilisearch-Server zeigt und verwaltet nur eine einzige **[Site](/sites/the-basics)**.
+Du kannst auf diesem Server keine weiteren Sites erstellen oder löschen.
+Wenn du von einem Web- oder Anwendungsserver eine Verbindung zum Meilisearch-Server herstellen möchtest, solltest du dies über seine private IP-Adresse tun.
 
 
 ## Load Balancer

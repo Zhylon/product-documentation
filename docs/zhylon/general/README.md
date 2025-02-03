@@ -62,7 +62,7 @@ Die Dokumentation zur Zhylon API findest du [hier](/api).
 
 ## Rechtliche Hinweise und Compliance
 
-Unsere [Nutzungsbedingungen](https://zhylon.net/terms-of-service),
-[Datenschutzrichtlinien](https://zhylon.net/privacy-policy) und
-[Vereinbarung zur Datenverarbeitung (DPA)](https://zhylon.net/data-processing-agreement)
+Unsere [Nutzungsbedingungen](https://id.zhylon.net/terms-of-service) und
+[Datenschutzrichtlinien](https://id.zhylon.net/privacy-policy)
+<!-- und [Vereinbarung zur Datenverarbeitung (DPA)](https://id.zhylon.net/data-processing-agreement) -->
 enthalten Informationen zu den Bedingungen, Bestimmungen und Datenschutzpraktiken für die Nutzung von Zhylon.

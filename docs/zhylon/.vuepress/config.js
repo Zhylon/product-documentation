@@ -3,20 +3,18 @@ const {description} = require('../../package')
 module.exports = {
 
     title: 'Zhylon Docs 🚀',
-    description: 'The documentation for our server management tool.',
+    description: 'Die API Dokumentation zu unserem Server Management Tool.',
     head: [
         ['meta', {name: 'theme-color', content: '#3eaf7c'}],
         ['meta', {name: 'apple-mobile-web-app-capable', content: 'yes'}],
         ['meta', {name: 'apple-mobile-web-app-status-bar-style', content: 'black'}]
     ],
     locales: {
-        /*
         '/en/': {
             lang: '🇺🇸',
             title: 'Zhylon Docs 🚀',
-            description: 'Die API Dokumentation zu unserem Server Management Tool.'
+            description: 'The documentation for our server management tool.'
         },
-        */
         '/': {
             lang: '🇩🇪',
             title: 'Zhylon Docs 🚀',
@@ -25,39 +23,124 @@ module.exports = {
     },
 
     themeConfig: {
-        repo: '',
-        editLinks: false,
-        docsDir: '',
+        repo: 'zhylon/issues',
+        docsRepo: 'zhylon/zhylon-docs',
+        docsDir: 'docs/zhylon',
+        docsBranch: 'main',
+        editLinks: true,
         editLinkText: '',
         lastUpdated: false,
 
         locales: {
-            '/en': {
+            '/en/': {
                 selectText: 'Languages',
-                label: 'English',
+                label: '🇺🇸',
                 ariaLabel: 'Languages',
-                // text for the edit-on-github link
-                editLinkText: 'Edit this page on GitHub',
-                // config for Service Worker
+                editLinkText: 'Edit this site on GitHub',
                 serviceWorker: {
                     updatePopup: {
                         message: "New content is available.",
                         buttonText: "Refresh"
                     }
                 },
-                // algolia docsearch options for current locale
-                algolia: {},
                 nav: [
-                    {text: 'Nested', link: '/nested/', ariaLabel: 'Nested'}
+                    {text: 'General', link: '/en/general/'},
+                    {text: 'Accounts', link: '/en/accounts/'},
+                    {text: 'Servers', link: '/en/servers/providers'},
+                    {text: 'Sites', link: '/en/sites/'},
+                    {text: 'Projects', link: '/en/projects/'},
+                    {text: 'Resources', link: '/en/resources/daemons'},
+                    {text: 'API', link: '/en/api/'},
                 ],
+                algolia: {},
                 sidebar: {
-                    '/features/': [
+                    '/en/general/': [
                         {
-                            title: 'Features',
+                            title: 'Allgemein',
                             collapsable: false,
+                            sidebarDepth: 2,
                             children: [
                                 '',
+                                'cli',
+                                'sdk',
+                            ]
+                        }
+                    ],
+                    '/en/accounts/': [
+                        {
+                            title: 'Account',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '',
+                                'teams',
+                                'source-control',
+                                'ssh',
+                                'api',
+                                'tags',
+                            ]
+                        }
+                    ],
+                    '/en/servers/': [
+                        {
+                            title: 'Servers',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                'providers',
+                                'types',
+                                'management',
+                                'provisioning-process',
+                                'ssh',
+                                'php',
+                                'packages',
+                                //'recipes',
+                                'load-balancing',
+                                'nginx-templates',
+                                'backups',
                                 'monitoring',
+                                'cookbook',
+                            ]
+                        }
+                    ],
+                    '/en/sites/': [
+                        {
+                            title: 'Seiten',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                'the-basics',
+                                'applications',
+                                'deployments',
+                                'commands',
+                                'packages',
+                                'queues',
+                                'security-rules',
+                                'redirects',
+                                'ssl',
+                                'user-isolation',
+                                'monitoring',
+                                //'cookbook',
+                            ]
+                        }
+                    ],
+                    '/en/projects/': [
+                        {
+                            title: 'Projekte',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '',
+                            ]
+                        }
+                    ],
+                    '/en/api/': [
+                        {
+                            title: 'API',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '',
                             ]
                         }
                     ],
@@ -67,6 +150,7 @@ module.exports = {
                 selectText: 'Sprachen',
                 label: '🇩🇪',
                 ariaLabel: 'Sprachen',
+                editLinkText: 'Bearbeite diese Seite auf GitHub',
                 serviceWorker: {
                     updatePopup: {
                         message: "New content is available.",
@@ -77,9 +161,9 @@ module.exports = {
                     {text: 'Allgemein', link: '/general/'},
                     {text: 'Account', link: '/accounts/'},
                     {text: 'Server', link: '/servers/providers'},
-                    {text: 'Seiten', link: '/sites/'},
+                    {text: 'Seiten', link: '/sites/the-basics'},
                     {text: 'Projekte', link: '/projects/'},
-                    {text: 'Ressourcen', link: '/resources/'},
+                    {text: 'Ressourcen', link: '/resources/daemons'},
                     {text: 'API', link: '/api/'},
                 ],
                 algolia: {},
@@ -120,6 +204,63 @@ module.exports = {
                                 'providers',
                                 'types',
                                 'management',
+                                'provisioning-process',
+                                'ssh',
+                                'php',
+                                'packages',
+                                //'recipes',
+                                'load-balancing',
+                                'nginx-templates',
+                                'backups',
+                                'monitoring',
+                                'cookbook',
+                            ]
+                        }
+                    ],
+                    '/sites/': [
+                        {
+                            title: 'Seiten',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                'the-basics',
+                                'applications',
+                                'deployments',
+                                'commands',
+                                'packages',
+                                'queues',
+                                'security-rules',
+                                'redirects',
+                                'ssl',
+                                'user-isolation',
+                                'monitoring',
+                                //'cookbook',
+                            ]
+                        }
+                    ],
+                    '/projects/': [
+                        {
+                            title: 'Projekte',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '',
+                            ]
+                        }
+                    ],
+                    '/resources/': [
+                        {
+                            title: 'Ressourcen',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                'daemons',
+                                'databases',
+                                'caches',
+                                'network',
+                                'scheduler',
+                                'integrations',
+                                'cookbook',
                             ]
                         }
                     ],
