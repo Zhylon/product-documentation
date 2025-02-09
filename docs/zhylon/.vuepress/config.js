@@ -24,7 +24,7 @@ module.exports = {
 
     themeConfig: {
         repo: 'zhylon/issues',
-        docsRepo: 'zhylon/zhylon-docs',
+        docsRepo: 'zhylon/product-documentation',
         docsDir: 'docs/zhylon',
         docsBranch: 'main',
         editLinks: true,
