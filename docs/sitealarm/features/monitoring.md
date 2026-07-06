@@ -20,34 +20,26 @@ stehen verschiedene Optionen zur Verfügung, um diese Überprüfung nach deinen 
 
 ## Überprüfungsfrequenz
 
-Uptime-Überprüfungen erfolgen **jede Minute** vom primären Standort aus.
+Uptime-Überprüfungen erfolgen **jede Minute** von unserem Hauptstandort aus. Dieser Standort trifft immer die
+endgültige Entscheidung, ob eine Benachrichtigung ausgelöst wird.
 
-Sobald der primäre Standort ein Problem erkennt, wird der sekundäre Standort zur Bestätigung verwendet.
+Zusätzlich kannst du pro Monitor beliebig viele weitere, unabhängige Standorte zur Bestätigung aktivieren
+(siehe [Unsere Standorte](#unsere-standorte)). Diese Standorte lösen selbst **niemals** einen Alarm aus —
+sie bestätigen lediglich, was der Hauptstandort bereits vermutet:
 
-Wenn du dies auf einer Zeitleiste darstellen würdest, sähe es so aus:
+1. Der Hauptstandort erkennt ein Problem und merkt sich den Zeitpunkt.
+2. Erst nachdem eine konfigurierbare Wartezeit abgelaufen ist, wird überhaupt eine Benachrichtigung erwogen.
+3. Sind für den Monitor keine zusätzlichen Standorte aktiviert, wird sofort benachrichtigt.
+4. Sind Standorte aktiviert, aber seit einiger Zeit nicht mehr erreichbar (kein Heartbeat), gelten sie als
+   nicht vertrauenswürdig — es wird ebenfalls sofort benachrichtigt.
+5. Meldet mindestens ein aktiver, erreichbarer Standort im selben Zeitraum ebenfalls "nicht erreichbar",
+   gilt das Problem als bestätigt und du wirst benachrichtigt.
+6. Meldet kein aktiver Standort ein Problem, wird (noch) keine Benachrichtigung ausgelöst.
 
-| Zeit  | Status  | Standort                                     |
-|-------|---------|----------------------------------------------|
-| 09:20 | OK      | Primär                                       |
-| 09:21 | OK      | Primär                                       |
-| 09:22 | PROBLEM | Primär                                       |
-| 09:22 | PROBLEM | Sekundär                                     |
-| 09:23 | PROBLEM | Primär                                       |
-| 09:23 | PROBLEM | Sekundär                                     |
-| 09:23 |         | **Benachrichtigung ausgelöst: Website DOWN** |
-| 09:24 | PROBLEM | Primär                                       |
-| 09:24 | PROBLEM | Sekundär                                     |
-| 09:25 | OK      | Primär                                       |
-| 09:25 |         | **Benachrichtigung ausgelöst: Website UP**   |
-| 09:26 | OK      | Primär                                       |
-| 09:27 | OK      | Primär                                       |
+Die Wartezeit vor einer Benachrichtigung kannst du unter 'Monitors > Einstellungen > Verfügbarkeit >
+Benachrichtigungseinstellungen' anpassen, falls dir die Standardeinstellung zu schnell oder zu langsam ist.
 
-Das erste Problem wird um *09:22 Uhr* erkannt, und der zweite Standort wird sofort verwendet, um das Problem zu bestätigen.
-
-Wenn beide Standorte bestätigen, dass die Website **2 Minuten hintereinander** nicht erreichbar ist, wirst du über dieses Ereignis benachrichtigt.
-Falls dies zu schnell ist, kannst du die Anzahl der Minuten für Nichtverfügbarkeit vor einer Benachrichtigung in den 'Monitors > Einstellungen > Verfügbarkeit > Benachrichtigungseinstellungen' erhöhen.
-
-Die Überprüfung um *09:25 Uhr* hat bestätigt, dass die Website wieder online ist. Du wirst darüber ebenfalls benachrichtigt.
+Sobald die Website an allen zuständigen Standorten wieder erreichbar ist, wirst du auch darüber benachrichtigt.
 
 
 ## Was ist Nichtverfügbarkeit?
@@ -66,11 +58,14 @@ Beispielsweise wird auch eine `HTTP/204 No Content`-Antwort als "online" betrach
 
 ## Unsere Standorte
 
-Wir überwachen deine Website von mehreren Standorten aus. Der primäre Standort ist Frankfurt, Deutschland.
+Unser Hauptstandort befindet sich in Frankfurt, Deutschland — von dort aus wird jeder Monitor überwacht.
 
-Europa:
-- Frankfurt, Deutschland (primär)
-- Jena, Deutschland
+Zusätzlich betreiben wir weitere, unabhängige Standorte, die du je Monitor einzeln unter
+'Monitors > Einstellungen > Verfügbarkeit > Standorte' zur Bestätigung hinzuschalten kannst. Ist für einen
+Monitor kein zusätzlicher Standort aktiviert, wird er ausschließlich vom Hauptstandort geprüft.
+
+Welche Standorte aktuell verfügbar sind, siehst du direkt in den Monitor-Einstellungen — die Liste wächst
+laufend, da wir und die Community neue Standorte registrieren können.
 
 
 ### Standorte hinzufügen

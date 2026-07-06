@@ -17,6 +17,7 @@ Liste der Funktionen
 - [**Defekte Links**](broken-links): Wir durchsuchen deine Website und benachrichtigen dich, wenn wir einen defekten Link feststellen.
 - [**Cron-Jobs**](heartbeats): Sobald eine deiner geplanten Aufgaben uns keine Rückmeldung gibt, senden wir dir eine Benachrichtigung.
 - [**Anwendungsgesundheit**](app-health): Wir überwachen wichtige Teile deines Servers und deiner Anwendung. Wir informieren dich, wenn der Speicherplatz knapp wird, die von dir genutzte API nicht erreichbar ist und vieles mehr...
+- [**Suche**](search): Finde deine Monitore, Heartbeats und Application-Health-Checks direkt im Dashboard.
 
 
 Jede Überprüfung wird in den oben genannten Links detaillierter beschrieben.

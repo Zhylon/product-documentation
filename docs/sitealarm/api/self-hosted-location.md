@@ -5,82 +5,103 @@ Wenn du einen Standort vorschlagen möchtest, kannst du uns gerne kontaktieren.
 
 Um selbst einen Standort bereitzustellen, lies dir bitte die folgenden Informationen durch.
 Wenn du alle Informationen gelesen hast und immer noch Fragen hast, kannst du uns gerne kontaktieren.
-Treffen alle folgenden Punkte auf dich zu, dann kannst du dich als Standortbetreiber registrieren.
 
 
 ## Was ist ein Standort?
 
-Ein Standort ist ein Server, der von Sitealarm verwendet wird, um deine Website zu überwachen.
-Wir überwachen deine Website von mehreren Standorten aus. Der primäre Standort ist **Frankfurt, Deutschland**.
+Ein Standort (Node) ist ein Server, der von Sitealarm verwendet wird, um deine Website zusätzlich zu
+unserem Hauptstandort (Frankfurt, Deutschland) zu überwachen. Ein Standort trifft **nie selbst** die
+Entscheidung, eine Benachrichtigung auszulösen — er meldet lediglich seine Prüfergebnisse an den
+Hauptserver zurück, der allein über Alarme entscheidet.
 
-Diese können von uns bereitgestellt werden oder du kannst deinen eigenen Standort bereitstellen.
-Es sind keine besonderen Voraussetzungen erforderlich, um einen Standort zu betreiben.
-Du benötigst lediglich einen Server mit einer öffentlichen IP-Adresse (IPv4 und/oder IPv6).
+Du benötigst lediglich einen Server mit einer öffentlichen IP-Adresse (IPv4 und/oder IPv6) und ausgehendem
+HTTPS-Zugriff auf unseren Hauptserver. Ein eingehender Endpunkt ist **nicht** erforderlich — der Standort
+holt sich seine Aufgaben aktiv beim Hauptserver ab (Pull statt Push).
 
 
-### Prüfungsverfahren
+## Registrierung
 
-Im Anschluss musst du einen Endpunkt bereitstellen, an den wir eine `POST`-Anfrage senden können.
-Der Endpunkt sollte eine `HTTP/200`-Antwort zurückgeben, wenn alles in Ordnung ist.
-
-Außerdem solltest du einen geheimen Wert im `health-check-secret` Header überprüfen.
-Diesen musst du validieren, um sicherzustellen, dass die Anfrage tatsächlich von Sitealarm stammt.
-Der Wert wird auch verwendet, um den Payload zu verschlüsseln, der an deine Anwendung gesendet wird.
-
-Der Payload ist ein JSON-Objekt, das die Website enthält, die überprüft werden soll.
-Hier ist ein Beispiel:
-
-```json
-{
-  "h:Zx4N6LjrYar5RA9mDP": {
-    "url": "https://site-example.com",
-    "type": "HEAD"
-  },
-  "h:YKMn8Q1WRdqm6GBVlv": {
-    "url": "https://other-example.com",
-    "type": "GET",
-    "keyword": "find me"
-  },
-  "h:ow396J7bvjbjGa2yA8": {
-    "url": "https://something-example.com",
-    "type": "POST",
-    "headers": {
-      "Content-Type": "application/json",
-      "X-My-Header": "foo"
-    },
-    "payload": {
-      "foo": "bar"
-    }
-  }
-}
-```
-
-Die Antwort sollte ein JSON-Objekt sein, das die Ergebnisse der Health-Checks enthält.
-
-```json
-{
-  "h:Zx4N6LjrYar5RA9mDP": {
-    "status": "ok",
-    "response_time": 0.123
-  },
-  "h:YKMn8Q1WRdqm6GBVlv": {
-    "status": "ok",
-    "response_time": 0.456
-  },
-  "h:ow396J7bvjbjGa2yA8": {
-    "status": "failed",
-    "type": "http_error"
-  }
-}
-```
-
-## Implementierung via PHP
-
-Wir haben ein PHP-Paket erstellt, das du verwenden kannst, um einen Standort zu implementieren.
-Du kannst es mit Composer installieren:
+Ein neuer Standort wird von uns per Artisan-Command registriert:
 
 ```bash
-composer require zhylon/health-check-server
+php artisan probe:register-location "London" lon
 ```
 
-Weitere Informationen findest du in der [Dokumentation des Paktes](https://github.com/Zhylon/health-check-server).
+Das Kommando gibt dir Namen, Slug und ein einmalig generiertes Bearer-Token aus, das du sicher (wie ein
+Passwort) auf dem neuen Node hinterlegen musst.
+
+
+## Kommunikationsablauf
+
+Der Node authentifiziert sich bei jedem Aufruf über den `Authorization: Bearer <token>`-Header und
+kommuniziert ausschließlich über folgende drei Endpunkte:
+
+```
+GET  /api/probe/monitors    Ruft die für diesen Standort freigeschalteten Monitore ab
+POST /api/probe/heartbeat   Signalisiert dem Hauptserver, dass der Node aktiv ist
+POST /api/probe/results     Meldet Prüfergebnisse an den Hauptserver
+```
+
+Alle Aufrufe sind zusätzlich rate-limitiert.
+
+### `GET /api/probe/monitors`
+
+Liefert alle Monitore, die für genau diesen Standort aktiviert wurden (Opt-in pro Monitor).
+
+```json
+{
+  "monitors": [
+    {
+      "id": 42,
+      "url": "https://example.com",
+      "type": "http",
+      "interval_seconds": 60,
+      "timeout_seconds": 10
+    }
+  ]
+}
+```
+
+### `POST /api/probe/heartbeat`
+
+Kein Body erforderlich — allein der gültige Token reicht, um `last_seen` auf dem Hauptserver zu aktualisieren.
+
+```json
+{ "status": "ok", "server_time": "2026-07-06T10:00:00Z" }
+```
+
+### `POST /api/probe/results`
+
+```json
+{
+  "results": [
+    {
+      "monitor_id": 42,
+      "status": "down",
+      "response_time": null,
+      "http_code": null,
+      "error": "Connection refused",
+      "checked_at": "2026-07-06T10:00:00Z"
+    }
+  ]
+}
+```
+
+Antwort:
+
+```json
+{ "accepted": 1 }
+```
+
+Ergebnisse für Monitore, die für diesen Standort nicht freigeschaltet sind, werden ignoriert.
+
+
+## Referenzimplementierung
+
+Unsere eigene Node-Software ist eine schlanke Laravel-Konsolenanwendung, die die drei Aufgaben in
+regelmäßigen Abständen ausführt:
+
+- `probe:run` — holt Monitore, führt die Checks aus und sendet die Ergebnisse (jede Minute)
+- `probe:heartbeat` — sendet den Keep-Alive (alle 5 Minuten)
+
+Ein eigenes Redis/Horizon-Setup ist auf dem Node nicht notwendig.

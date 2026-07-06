@@ -5,14 +5,17 @@
   "main": "index.js",
   "authors": {
     "name": "TobyMaxham",
-    "email": "git@maxham.de"
+    "email": "git@maxham.de",
+    "sds": "https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported"
   },
   "repository": "https://github.com/Zhylon/product-documentation",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
     "dev:sitealarm": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev sitealarm",
-    "build:sitealarm": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build sitealarm --dest '../builds/sitealarm'"
+    "build:sitealarm": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build sitealarm --dest '../builds/sitealarm'",
+    "dev:zhylon": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev zhylon",
+    "build:zhylon": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build zhylon --dest '../builds/zhylon'"
   },
   "license": "MIT",
   "devDependencies": {

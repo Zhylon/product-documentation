@@ -93,6 +93,7 @@ module.exports = {
                                 'broken-links',
                                 'heartbeats',
                                 'app-health',
+                                'search',
                             ]
                         }
                     ],
@@ -116,6 +117,7 @@ module.exports = {
                             sidebarDepth: 2,
                             children: [
                                 '',
+                                'plans',
                                 'self-hosted-location',
                             ]
                         }

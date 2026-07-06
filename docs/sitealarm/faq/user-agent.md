@@ -134,6 +134,7 @@ Alle Varianten sind eindeutig als Sitealarm erkennbar und verweisen auf die Doku
 | **Mixed Content**     | `Mozilla/5.0 (compatible; Sitealarm/3.1; +https://sitealarm.de/docs; mixed-content)`  |
 | **Broken links**      | `Mozilla/5.0 (compatible; Sitealarm/3.1; +https://sitealarm.de/docs; broken-links)`   |
 | **SSL-Zertifikat**    | `Mozilla/5.0 (compatible; Sitealarm/3.1; +https://sitealarm.de/docs; ssl-check)`      |
+| **App Health**        | `Mozilla/5.0 (compatible; Sitealarm/3.1; +https://sitealarm.de/docs; app-health')`    |
 | **Zukünftige Module** | `Mozilla/5.0 (compatible; Sitealarm/<Version>; +https://sitealarm.de/docs) <module>`  |
 
 ---
