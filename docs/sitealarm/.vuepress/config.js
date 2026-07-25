@@ -32,9 +32,9 @@ module.exports = {
         lastUpdated: false,
 
         locales: {
-            '/en': {
+            '/en/': {
                 selectText: 'Languages',
-                label: 'English',
+                label: '🇺🇸',
                 ariaLabel: 'Languages',
                 // text for the edit-on-github link
                 editLinkText: 'Edit this page on GitHub',
@@ -48,16 +48,51 @@ module.exports = {
                 // algolia docsearch options for current locale
                 algolia: {},
                 nav: [
-                    {text: 'Nested', link: '/nested/', ariaLabel: 'Nested'}
+                    {text: 'Features', link: '/en/features/'},
+                    {text: 'FAQ', link: '/en/faq/'},
+                    {text: 'API', link: '/en/api/'},
                 ],
                 sidebar: {
-                    '/features/': [
+                    '/en/features/': [
                         {
                             title: 'Features',
                             collapsable: false,
+                            sidebarDepth: 2,
                             children: [
                                 '',
                                 'monitoring',
+                                'certificates',
+                                'heartbeats',
+                                'app-health',
+                                'search',
+                                'domain-verification',
+                                'mixed-content',
+                                'broken-links',
+                            ]
+                        }
+                    ],
+                    '/en/faq/': [
+                        {
+                            title: 'FAQ',
+                            collapsable: false,
+                            children: [
+                                '',
+                                'robots-txt',
+                                'user-agent',
+                                'domain-verification',
+                                'migrate-from-others',
+                            ]
+                        }
+                    ],
+                    '/en/api/': [
+                        {
+                            title: 'API',
+                            collapsable: false,
+                            sidebarDepth: 2,
+                            children: [
+                                '',
+                                'plans',
+                                'self-hosted-location',
                             ]
                         }
                     ],

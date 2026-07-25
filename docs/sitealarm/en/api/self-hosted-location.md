@@ -1,27 +1,27 @@
-# Standorte für Sitealarm bereitstellen
+# Deploying locations for Sitealarm
 
-Wir suchen ständig nach neuen Standorten, um unsere Überwachung zu verbessern.
-Wenn du einen Standort vorschlagen möchtest, kannst du uns gerne kontaktieren.
+We are constantly looking for new locations to improve our monitoring.
+If you would like to suggest a location, feel free to contact us.
 
-Um selbst einen Standort bereitzustellen, lies dir bitte die folgenden Informationen durch.
-Wenn du alle Informationen gelesen hast und immer noch Fragen hast, kannst du uns gerne kontaktieren.
-Treffen alle folgenden Punkte auf dich zu, dann kannst du dich als Standortbetreiber registrieren.
-
-
-## Was ist ein Standort?
-
-Ein Standort ist ein Server, der von Sitealarm verwendet wird, um deine Website zu überwachen.
-Wir überwachen deine Website von mehreren Standorten aus. Der primäre Standort ist Frankfurt, Deutschland.
-
-Diese können von uns bereitgestellt werden oder du kannst deinen eigenen Standort bereitstellen.
-Es sind keine besonderen Voraussetzungen erforderlich, um einen Standort zu betreiben.
-Du benötigst lediglich einen Server mit einer öffentlichen IP-Adresse (IPv4 und/oder IPv6).
+To deploy a location yourself, please read the following information.
+If you have read all the information and still have questions, feel free to contact us.
+If all of the following points apply to you, you can register as a location operator.
 
 
-### Standorte hinzufügen
+## What is a location?
 
-Außerdem bieten wir dir auch die Möglichkeit, dich als Betreiber eines Standorts zu registrieren. Wenn du daran interessiert bist, kontaktiere uns bitte.
-Es sind keine besonderen Voraussetzungen erforderlich, um einen Standort zu betreiben. Du benötigst lediglich einen Server mit einer öffentlichen IP-Adresse (IPv4 und/oder IPv6).
+A location is a server used by Sitealarm to monitor your website.
+We monitor your website from multiple locations. The primary location is Frankfurt, Germany.
 
-Im Anschluss musst du einen Endpunkt bereitstellen, an den wir eine `POST`-Anfrage senden können.
-Der Endpunkt sollte eine `HTTP/200`-Antwort zurückgeben, wenn alles in Ordnung ist.
+These can be provided by us, or you can deploy your own location.
+There are no special requirements for operating a location.
+You only need a server with a public IP address (IPv4 and/or IPv6).
+
+
+### Adding locations
+
+We also offer you the option to register as the operator of a location. If you are interested, please contact us.
+There are no special requirements for operating a location. You only need a server with a public IP address (IPv4 and/or IPv6).
+
+After that, you need to provide an endpoint to which we can send a `POST` request.
+The endpoint should return an `HTTP/200` response if everything is fine.
