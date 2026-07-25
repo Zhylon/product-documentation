@@ -89,11 +89,12 @@ module.exports = {
                                 '',
                                 'monitoring',
                                 'certificates',
-                                'mixed-content',
-                                'broken-links',
                                 'heartbeats',
                                 'app-health',
                                 'search',
+                                'domain-verification',
+                                'mixed-content',
+                                'broken-links',
                             ]
                         }
                     ],

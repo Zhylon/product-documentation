@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: https://sitealarm.de/img/logo-sitealarm.png
+heroImage: https://sitealarm.app/img/logo-sitealarm.png
 tagline: Die Dokumentation zum Monitoring Service.
 actionText: Schnellstart →
 actionLink: /features/

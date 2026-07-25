@@ -70,4 +70,4 @@ laufend, da wir und die Community neue Standorte registrieren können.
 
 ### Standorte hinzufügen
 Wenn du uns einen weiteren Standort vorschlagen möchtest, oder selbst einen Standort bereitstellen möchtest, kannst du uns gerne kontaktieren.
-Lies hierzu bitte die Informationen unter [Standorte für Sitealarm bereitstellen](/api/self-hosted-location) durch.
+Lies hierzu bitte die Informationen unter [Standorte für Sitealarm bereitstellen](/api/self-hosted-location.html) durch.

@@ -20,7 +20,7 @@ Optional bieten wir ein PHP SDK-Paket an, um dir den Einstieg zu erleichtern.
 
 ### API-Endpunkt
 
-Alle Sitealarm API-Endpunkte befinden sich unter `https://sitealarm.de/api/v1`.
+Alle Sitealarm API-Endpunkte befinden sich unter `https://sitealarm.app/api/v2`.
 Ab diesem Punkt folgt eine logische Struktur, die dem **REST-Standard** entspricht.
 
 Hier ist eine kurze Zusammenfassung der API-Methoden:
@@ -77,7 +77,7 @@ Dieser Schlüssel muss in jedem API-Aufruf als `Authorization`-Header übergeben
 
 ```bash
 $ SITEALARM_TOKEN="your API token"
-$ curl https://sitealarm.de/api/v1/monitors \
+$ curl https://sitealarm.app/api/v2/monitors \
     -H "Authorization: Bearer $SITEALARM_TOKEN" \
     -H 'Accept: application/json' \
     -H 'Content-Type: application/json'
